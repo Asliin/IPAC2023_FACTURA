@@ -94,6 +94,7 @@
             this.PasswordTextBox.Enabled = false;
             this.PasswordTextBox.Location = new System.Drawing.Point(112, 88);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(325, 22);
             this.PasswordTextBox.TabIndex = 5;
             // 
@@ -165,6 +166,7 @@
             // 
             // CancelarButton
             // 
+            this.CancelarButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelarButton.Enabled = false;
             this.CancelarButton.Image = global::Vista.Properties.Resources.boton_x1;
             this.CancelarButton.Location = new System.Drawing.Point(517, 231);
@@ -179,7 +181,6 @@
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Enabled = false;
             this.EliminarButton.Image = global::Vista.Properties.Resources.borrar;
             this.EliminarButton.Location = new System.Drawing.Point(416, 231);
             this.EliminarButton.Name = "EliminarButton";
@@ -189,6 +190,7 @@
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -206,7 +208,6 @@
             // 
             // ModificarButton
             // 
-            this.ModificarButton.Enabled = false;
             this.ModificarButton.Image = global::Vista.Properties.Resources.editar;
             this.ModificarButton.Location = new System.Drawing.Point(214, 231);
             this.ModificarButton.Name = "ModificarButton";
@@ -267,8 +268,10 @@
             // 
             // UsuariosForm
             // 
+            this.AcceptButton = this.GuardarButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelarButton;
             this.ClientSize = new System.Drawing.Size(913, 598);
             this.Controls.Add(this.UsuariosdataGridView);
             this.Controls.Add(this.CancelarButton);
@@ -291,9 +294,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsuariosForm";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -4,17 +4,15 @@
     {
         public string CodigoUsuario { get; set; }
         public string Password { get; set; }
-        public string Rol { get; set; }
 
         public Login()
         {
         }
 
-        public Login(string codigoUsuario, string password, string rol)
+        public Login(string codigoUsuario, string password)
         {
             CodigoUsuario = codigoUsuario;
             Password = password;
-            Rol = rol;
         }
     }
 }
